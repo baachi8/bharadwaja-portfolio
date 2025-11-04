@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bharadwaja G | DevOps-SRE Portfolio</title>
+<link rel="icon" href="logo.png" type="image/png" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<style>
+/* ===== Preloader ===== */
+#preloader {
+  position: fixed; top:0; left:0; width:100%; height:100%;
+  background:#0a0f1c; display:flex; justify-content:center; align-items:center;
+  z-index:9999; overflow:hidden;
+}
+.cloud {
+  position: absolute; width:150px; height:80px; background:#fff;
+  border-radius:50%; opacity:0.2; animation: cloudMove linear infinite;
+}
+.cloud:nth-child(1){ top:30%; animation-duration:20s; left:-200px; }
+.cloud:nth-child(2){ top:50%; animation-duration:25s; left:-300px; }
+.cloud:nth-child(3){ top:40%; animation-duration:30s; left:-400px; }
+@keyframes cloudMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(120vw); }
+}
+.spinner {
+  position:absolute; border:6px solid rgba(255,255,255,0.2);
+  border-top:6px solid #ff6f61;
+  border-radius:50%;
+  width:60px; height:60px;
+  animation: spin 1s linear infinite;
+  z-index:10;
+}
+@keyframes spin { 0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);} }
+
+/* ===== Body & General ===== */
+body {
+  margin:0; font-family:'Poppins',sans-serif;
+  background: url('devops-bg.jpg') no-repeat center center fixed;
+  background-size: cover; 
+  color:#e0e0e0; scroll-behavior:smooth;
+}
+
+header {
+  background: rgba(80,0,120,0.85);
+  color:#ffffff; padding:20px 5%;
+  display:flex; align-items:center; justify-content:space-between;
+  box-shadow:0 2px 10px rgba(0,0,0,0.4); flex-wrap:wrap;
+}
+.header-left img {
+  width:100px; height:100px;
+  border-radius:50%; border:3px solid #ff6f61;
+}
+.header-center {
+  text-align:center; flex:1;
+}
+.header-center h1 {
+  margin:0; color:#ffffff; font-size:3rem;
+}
+.header-center span {
+  color:#ff6f61; font-size:1.6rem; font-weight:500;
+}
+.header-right a {
+  color:#ffffff; margin-left:15px; font-size:1.4rem; text-decoration:none;
+}
+.header-right a:hover { color:#ff6f61; }
+
+/* ===== Sections ===== */
+section {
+  padding:60px 10% 40px 10%;  /* reduced spacing */
+  margin-bottom:30px;          /* reduced spacing between sections */
+  opacity:0; transform:translateY(20px);
+  transition: all 0.8s ease;
+}
+section.visible { opacity:1; transform:translateY(0); }
+
+h2 {
+  color:#ff6f61;
+  border-bottom:2px solid #ff6f61;
+  display:inline-block; padding-bottom:5px; margin-bottom:15px;
+}
+
+.skills-grid, .projects-grid, .certifications-grid, .work-grid, .awards-grid, .publication-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px;
+}
+
+.card {
+  background: rgba(26,31,46,0.85);
+  padding:20px; border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,180,216,0.15);
+  transition:0.3s;
+}
+.card:hover {
+  transform:translateY(-5px);
+  box-shadow:0 6px 16px rgba(0,180,216,0.25);
+}
+
+footer {
+  background: rgba(50,0,90,0.9);
+  color:#ccc; text-align:center; padding:20px; font-size:0.9rem;
+}
+
+.contact a { color:#ff6f61; text-decoration:none; }
+.contact a:hover { color:#fff; }
+
+@media (max-width:768px) {
+  header { flex-direction:column; text-align:center; }
+  .header-right { margin-top:10px; }
+  section { padding-top:60px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Preloader -->
+<div id="preloader">
+  <div class="cloud"></div>
+  <div class="cloud"></div>
+  <div class="cloud"></div>
+  <div class="spinner"></div>
+</div>
+
+<!-- Header -->
+<header>
+  <div class="header-left"><img src="profile.jpg" alt="Bharadwaja G Photo" /></div>
+  <div class="header-center"><h1>Bharadwaja G</h1><span>DevOps-SRE</span></div>
+  <div class="header-right">
+    <a href="mailto:bharadwajgundala10@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/bharadwaja-g-5ab0b9187/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="tel:+919121874521"><i class="fa-solid fa-phone"></i></a>
+  </div>
+</header>
+
+<!-- About -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>I’m a DevOps and Site Reliability Engineer with hands-on experience automating infrastructure, building CI/CD pipelines, and maintaining secure, scalable systems. Worked with AWS, Azure, Terraform, Ansible, Docker, Kubernetes.</p>
+    <p>Currently working at <strong>Wipro</strong> as DevOps-SRE. Experienced in MLOps practices, monitoring, DR drills, and cloud cost optimization.</p>
+  </div>
+</section>
+
+<!-- Work -->
+<section id="work">
+  <h2>Work History</h2>
+  <div class="work-grid">
+    <div class="card">
+      <h3>DevOps-SRE | Wipro | Nov 2022 – Apr 2025</h3>
+      <ul>
+        <li>Automated infrastructure provisioning using Terraform & Ansible (AWS/Azure).</li>
+        <li>Built CI/CD pipelines with Jenkins & GitHub Actions.</li>
+        <li>Performed vulnerability assessments and patching.</li>
+        <li>Managed Azure AD B2B access and Azure DevOps pipelines.</li>
+        <li>Configured SSL, DNS, VPN; optimized cloud resources.</li>
+        <li>Monitored performance via CloudWatch & Azure Monitor.</li>
+        <li>DR drills & backup/restore operations.</li>
+        <li>Subject Matter Expert for application infrastructure.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Operations Analyst | Wipro | Oct 2021 – Nov 2022</h3>
+      <ul>
+        <li>Provided L2 support for production & demo environments.</li>
+        <li>Documented incidents & resolutions.</li>
+        <li>Scrum Master using JIRA & ServiceNow.</li>
+        <li>Guided junior engineers in DevOps & automation.</li>
+        <li>Patch management & software updates.</li>
+        <li>Managed backups & DR drills.</li>
+        <li>Collaborated with infra & app teams.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <div class="skills-grid">
+    <div class="card"><h3><i class="fa-solid fa-cloud"></i> Cloud Platforms</h3><p>AWS, Azure, Azure DevOps, Azure AD</p></div>
+    <div class="card"><h3><i class="fa-solid fa-box"></i> Containers & Orchestration</h3><p>Docker, Kubernetes</p></div>
+    <div class="card"><h3><i class="fa-solid fa-terminal"></i> Scripting & Automation</h3><p>Bash, Terraform, Ansible, Jenkins</p></div>
+    <div class="card"><h3><i class="fa-solid fa-chart-line"></i> Monitoring Tools</h3><p>CloudWatch, Azure Monitor</p></div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    <div class="card"><h3>Server Deployment CI/CD</h3><p>Automated CI/CD pipeline using GitHub Actions and AWS services to deploy GoLang server via DockerHub & Elastic Beanstalk.</p></div>
+    <div class="card"><h3>RAFT Split Jobs</h3><p>Data replication between ship and shore, optimized transmission efficiency and minimized redundant transfers.</p></div>
+  </div>
+</section>
+
+<!-- Certifications -->
+<section id="certifications">
+  <h2>Certifications</h2>
+  <div class="certifications-grid">
+    <div class="card"><h3><i class="fa-solid fa-certificate"></i> Microsoft Certified: Azure Fundamentals</h3><p>Issued Apr 2024 | Credential ID: 5E2B8D6FCF77D3CB | <a href="https://learn.microsoft.com/api/credentials/share/en-in/BharadwajaGundala-8827/5E2B8D6FCF77D3CB?sharingId=ADE722CAAE1EC791" target="_blank">View Credential</a></p></div>
+    <div class="card"><h3><i class="fa-solid fa-certificate"></i> Cyber Security Essentials</h3><p>Issued Jul 2019 | Skills: Penetration Testing, Cybersecurity</p></div>
+    <div class="card"><h3><i class="fa-solid fa-certificate"></i> NPTEL Online Course: Java</h3><p>Issued Jan 2019 | <a href="https://nptel.ac.in/noc/E_Certificate/noc19-cs07/NPTEL19CS07S51452211191179008.jpg" target="_blank">View Credential</a></p></div>
+  </div>
+</section>
+
+<!-- Awards -->
+<section id="awards">
+  <h2>Awards</h2>
+  <div class="awards-grid">
+    <div class="card"><h3>Dream Team Award | Wipro</h3><p>Shipping Fleet Ops team ranked 7th within BP, achieved $17K savings in cloud cost optimization, reduced license costs, rationalized PAL environment, ensured 100% compliance on operational parameters.</p></div>
+  </div>
+</section>
+
+<!-- Publication -->
+<section id="publication">
+  <h2>Publication</h2>
+  <div class="publication-grid">
+    <div class="card"><h3>LoRa Based Wireless Weather Station</h3>
+      <p>Prototype using LoRa IoT technology measuring Temperature, Pressure, Dew point, Altitude, Rainfall, Humidity, Light Intensity. Arduino UNO, sensors, LoRa modules, ThingSpeak Web App. Deployable as Low Power-Wide Area Network.</p>
+      <p><a href="https://www.ijraset.com/fileserve.php?FID=35289" target="_blank">View Publication</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p><i class="fa-solid fa-envelope"></i> <a href="mailto:bharadwajgundala10@gmail.com">bharadwajgundala10@gmail.com</a></p>
+  <p><i class="fa-solid fa-phone"></i> <a href="tel:+919121874521">+91 9121874521</a></p>
+  <p><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/bharadwaja-g-5ab0b9187/" target="_blank">LinkedIn Profile</a></p>
+</section>
+
+<footer>
+  © 2025 Bharadwaja G — DevOps-SRE Portfolio
+</footer>
+
+<script>
+// Always show preloader for animation
+window.addEventListener('load', function(){
+  setTimeout(()=>{ document.getElementById('preloader').style.display='none'; }, 1000);
+});
+
+// Scroll animations
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", () => {
+  sections.forEach(section => {
+    if(section.getBoundingClientRect().top < window.innerHeight - 100){
+      section.classList.add("visible");
+    }
+  });
+});
+</script>
+</body>
+</html>
